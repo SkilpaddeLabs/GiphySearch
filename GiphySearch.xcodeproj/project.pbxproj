@@ -13,6 +13,7 @@
 		3A84F58E1D6530DD00425ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F58D1D6530DD00425ACB /* Assets.xcassets */; };
 		3A84F5911D6530DD00425ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F58F1D6530DD00425ACB /* LaunchScreen.storyboard */; };
 		3A84F59C1D6530DD00425ACB /* GiphySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */; };
+		3A84F5A71D65311900425ACB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5A61D65311900425ACB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		3A84F5971D6530DD00425ACB /* GiphySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphySearchTests.swift; sourceTree = "<group>"; };
 		3A84F59D1D6530DD00425ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A84F5A61D65311900425ACB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		3A84F57A1D6530DD00425ACB = {
 			isa = PBXGroup;
 			children = (
+				3A84F5A61D65311900425ACB /* README.md */,
 				3A84F5851D6530DD00425ACB /* GiphySearch */,
 				3A84F59A1D6530DD00425ACB /* GiphySearchTests */,
 				3A84F5841D6530DD00425ACB /* Products */,
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A84F5A71D65311900425ACB /* README.md in Sources */,
 				3A84F5891D6530DD00425ACB /* ViewController.swift in Sources */,
 				3A84F5871D6530DD00425ACB /* AppDelegate.swift in Sources */,
 			);
