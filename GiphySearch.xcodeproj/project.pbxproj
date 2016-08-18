@@ -21,6 +21,7 @@
 		3A84F5B81D65429200425ACB /* GiphyResponseTrending.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F5B71D65429200425ACB /* GiphyResponseTrending.json */; };
 		3A84F5BB1D65436900425ACB /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5BA1D65436900425ACB /* ImageItem.swift */; };
 		3A84F5BC1D65436900425ACB /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5BA1D65436900425ACB /* ImageItem.swift */; };
+		3A84F5BE1D6549A600425ACB /* GiphyTrendingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5BD1D6549A600425ACB /* GiphyTrendingTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3A84F5B11D653BBE00425ACB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Network/NetworkManager.swift; sourceTree = "<group>"; };
 		3A84F5B71D65429200425ACB /* GiphyResponseTrending.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GiphyResponseTrending.json; path = TestJSON/GiphyResponseTrending.json; sourceTree = "<group>"; };
 		3A84F5BA1D65436900425ACB /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageItem.swift; path = Network/ImageItem.swift; sourceTree = "<group>"; };
+		3A84F5BD1D6549A600425ACB /* GiphyTrendingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyTrendingTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				3A84F5B91D65429700425ACB /* TestJSON */,
 				3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */,
+				3A84F5BD1D6549A600425ACB /* GiphyTrendingTest.swift */,
 				3A84F59D1D6530DD00425ACB /* Info.plist */,
 			);
 			path = GiphySearchTests;
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A84F5BC1D65436900425ACB /* ImageItem.swift in Sources */,
+				3A84F5BE1D6549A600425ACB /* GiphyTrendingTest.swift in Sources */,
 				3A84F5B31D653BBF00425ACB /* NetworkManager.swift in Sources */,
 				3A84F59C1D6530DD00425ACB /* GiphySearchTests.swift in Sources */,
 				3A84F5AA1D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */,
