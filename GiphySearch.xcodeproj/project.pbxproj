@@ -14,6 +14,8 @@
 		3A84F5911D6530DD00425ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F58F1D6530DD00425ACB /* LaunchScreen.storyboard */; };
 		3A84F59C1D6530DD00425ACB /* GiphySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */; };
 		3A84F5A71D65311900425ACB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5A61D65311900425ACB /* README.md */; };
+		3A84F5A91D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */; };
+		3A84F5AA1D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 		3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphySearchTests.swift; sourceTree = "<group>"; };
 		3A84F59D1D6530DD00425ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A84F5A61D65311900425ACB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyAPIRouter.swift; path = Network/GiphyAPIRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 				3A84F58D1D6530DD00425ACB /* Assets.xcassets */,
 				3A84F58F1D6530DD00425ACB /* LaunchScreen.storyboard */,
 				3A84F5921D6530DD00425ACB /* Info.plist */,
+				3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */,
 			);
 			path = GiphySearch;
 			sourceTree = "<group>";
@@ -207,6 +211,7 @@
 				3A84F5A71D65311900425ACB /* README.md in Sources */,
 				3A84F5891D6530DD00425ACB /* ViewController.swift in Sources */,
 				3A84F5871D6530DD00425ACB /* AppDelegate.swift in Sources */,
+				3A84F5A91D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A84F59C1D6530DD00425ACB /* GiphySearchTests.swift in Sources */,
+				3A84F5AA1D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
