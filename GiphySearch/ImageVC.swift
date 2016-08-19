@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ImageVC.swift
 //  GiphySearch
 //
 //  Created by Tim Bolstad on 8/17/16.
@@ -10,7 +10,7 @@ import UIKit
 
 private let cellReuseID = "ImageCell"
 
-class ViewController: UIViewController {
+class ImageVC: UIViewController {
     
     var imageItems = [ImageItem]()
     
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Register cell xib
-        let nib = UINib(nibName: "ImageCVCell", bundle: nil)
+        let nib = UINib(nibName: "ImageCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellReuseID)
         setupCollectionView()
         
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ImageVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -74,7 +74,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseID, for: indexPath)
         
-        if let cell = cell as? ImageCVCell {
+        if let cell = cell as? ImageCell {
             
             let imageItem = imageItems[indexPath.row]
             cell.titleLabel.text = imageItem.rating
