@@ -12,7 +12,7 @@
 		3A84F58C1D6530DD00425ACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F58A1D6530DD00425ACB /* Main.storyboard */; };
 		3A84F58E1D6530DD00425ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F58D1D6530DD00425ACB /* Assets.xcassets */; };
 		3A84F5911D6530DD00425ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A84F58F1D6530DD00425ACB /* LaunchScreen.storyboard */; };
-		3A84F59C1D6530DD00425ACB /* GiphySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */; };
+		3A84F59C1D6530DD00425ACB /* GiphyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F59B1D6530DD00425ACB /* GiphyAPITests.swift */; };
 		3A84F5A91D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */; };
 		3A84F5AA1D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */; };
 		3A84F5B21D653BBF00425ACB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5B11D653BBE00425ACB /* NetworkManager.swift */; };
@@ -45,7 +45,7 @@
 		3A84F5901D6530DD00425ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A84F5921D6530DD00425ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A84F5971D6530DD00425ACB /* GiphySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphySearchTests.swift; sourceTree = "<group>"; };
+		3A84F59B1D6530DD00425ACB /* GiphyAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPITests.swift; sourceTree = "<group>"; };
 		3A84F59D1D6530DD00425ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A84F5A61D65311900425ACB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3A84F5A81D6531ED00425ACB /* GiphyAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyAPIRouter.swift; path = Network/GiphyAPIRouter.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3A84F5B91D65429700425ACB /* TestJSON */,
-				3A84F59B1D6530DD00425ACB /* GiphySearchTests.swift */,
+				3A84F59B1D6530DD00425ACB /* GiphyAPITests.swift */,
 				3A84F5BD1D6549A600425ACB /* GiphyTrendingTest.swift */,
 				3A84F59D1D6530DD00425ACB /* Info.plist */,
 			);
@@ -273,7 +273,7 @@
 				3A84F5BC1D65436900425ACB /* ImageItem.swift in Sources */,
 				3A84F5BE1D6549A600425ACB /* GiphyTrendingTest.swift in Sources */,
 				3A84F5B31D653BBF00425ACB /* NetworkManager.swift in Sources */,
-				3A84F59C1D6530DD00425ACB /* GiphySearchTests.swift in Sources */,
+				3A84F59C1D6530DD00425ACB /* GiphyAPITests.swift in Sources */,
 				3A84F5AA1D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
