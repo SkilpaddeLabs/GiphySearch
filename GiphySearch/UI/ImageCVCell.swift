@@ -13,6 +13,8 @@ class ImageCVCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var imageLink = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10.0

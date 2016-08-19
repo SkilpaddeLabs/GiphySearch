@@ -10,8 +10,33 @@ import Foundation
 
 class NetworkManager {
     
-    class func getTrending(completion: @escaping ([ImageItem])->()) {
+    class func getImage(_ urlString:String, completion:@escaping (Data, URL)->()) {
         
+        guard let url = URL(string: urlString) else { return }
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let dataTask = session.dataTask(with: url) {
+            (data, response, error) in
+            
+            // If no error, and data recieved,
+            // dispatch completion on main queue.
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+                if let data = data,
+              let returnUrl = response?.url {
+                    DispatchQueue.main.async {
+                        completion(data, returnUrl)
+                    }
+                }
+            }
+        }
+        dataTask.resume()
+    }
+    
+    class func getTrending(completion: @escaping ([ImageItem])->()) {
         
         let request = GiphyAPIRouter.Trending.URLRequest
         let session = URLSession(configuration: URLSessionConfiguration.default)

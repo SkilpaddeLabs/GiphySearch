@@ -17,6 +17,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elO-6t-qqQ">
                         <frame key="frameInset" minX="8" minY="8" width="194" height="149"/>
+                        <color key="backgroundColor" red="1" green="0.09611011174646622" blue="0.18962091457648866" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9P-f6-aR4">
                         <frame key="frameInset" minX="8" minY="165" width="194" height="28"/>
@@ -24,10 +25,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ML2-C6-vub">
-                        <frame key="frameInset" minX="8" minY="8" width="194" height="149"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.29279581947162214" green="1" blue="0.77365675247617882" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,10 +39,10 @@
             </constraints>
             <size key="customSize" width="210" height="201"/>
             <connections>
-                <outlet property="imageView" destination="ML2-C6-vub" id="wH7-f7-hX8"/>
+                <outlet property="imageView" destination="elO-6t-qqQ" id="OaW-AE-lGc"/>
                 <outlet property="titleLabel" destination="K9P-f6-aR4" id="DY8-P1-KO2"/>
             </connections>
-            <point key="canvasLocation" x="155" y="-15.5"/>
+            <point key="canvasLocation" x="-69" y="-21"/>
         </collectionViewCell>
     </objects>
 </document>

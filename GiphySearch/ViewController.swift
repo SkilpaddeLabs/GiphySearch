@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     var imageItems = [ImageItem]()
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var searchBox: UITextField!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -36,7 +37,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        
     }
     
     func setupCollectionView() {
@@ -75,8 +75,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseID, for: indexPath)
         
         if let cell = cell as? ImageCVCell {
-            let title = imageItems[indexPath.row].rating
-            cell.titleLabel.text = title
+            
+            let imageItem = imageItems[indexPath.row]
+            cell.titleLabel.text = imageItem.rating
+            
+            NetworkManager.getImage(imageItem.mainLink.url) { (data, url) in
+                
+                if let anImage = UIImage(data: data) {
+                    cell.imageView.image = anImage
+                }
+            }
+            
         }
         return cell
     }
