@@ -15,7 +15,7 @@ class ImageVC: UIViewController {
     static let CellReuseID = "ImageCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var searchBox: UITextField!
+    @IBOutlet weak var searchBox: UISearchBar!
     
     let imageVM = ImageVM()
     
@@ -24,11 +24,6 @@ class ImageVC: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         imageVM.refreshTrending(collectionView)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
     }
     
     func setupCollectionView() {
@@ -42,7 +37,6 @@ class ImageVC: UIViewController {
         
         // Setup layout.
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 50.0
         layout.minimumInteritemSpacing = 20.0
@@ -60,4 +54,17 @@ class ImageVC: UIViewController {
     }
 }
 
+extension ImageVC: UISearchBarDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let queryText = searchBar.text {
+            imageVM.search(queryText, collection:collectionView)
+        }
+        searchBox.resignFirstResponder()
+    }
+}
 

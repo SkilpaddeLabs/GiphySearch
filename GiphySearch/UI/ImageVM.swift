@@ -12,18 +12,23 @@ class ImageVM:NSObject {
     
     var imageItems = [ImageItem]()
     
-    func refreshTrending(_ collection:UICollectionView) {
+    func refreshTrending(_ collection:UICollectionView?) {
         
         NetworkManager.getTrending { imageList in
             
             self.imageItems = imageList
-            collection.reloadData()
+            collection?.reloadData()
         }
     }
     
-    func search(query:String) {
+    func search(_ query:String, collection:UICollectionView?) {
         
-        
+        NetworkManager.search(query) { imageList in
+            
+            self.imageItems = imageList
+            collection?.reloadData()
+            // TODO: show no items returned.
+        }
     }
 }
 

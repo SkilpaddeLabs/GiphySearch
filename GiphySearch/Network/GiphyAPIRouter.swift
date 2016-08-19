@@ -54,7 +54,7 @@ enum GiphyAPIRouter {
             return nil
         case .Search(let query):
             // TODO: add plus for phrases
-            return "/\(query)"
+            return "?q=\(query)"
         }
     }
     
@@ -67,7 +67,7 @@ enum GiphyAPIRouter {
         if let parameters = self.parameters {
             newURL = newURL + parameters + "&api_key=\(GiphyAPIRouter.APIKey)"
         } else {
-            newURL = newURL +  "?api_key=\(GiphyAPIRouter.APIKey)"
+            newURL = newURL + "?api_key=\(GiphyAPIRouter.APIKey)"
         }
         return URL(string:newURL)!
     }
