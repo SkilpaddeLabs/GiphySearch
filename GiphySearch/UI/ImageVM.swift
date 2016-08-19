@@ -23,10 +23,14 @@ class ImageVM:NSObject {
     
     func search(_ query:String, collection:UICollectionView?) {
         
-        NetworkManager.search(query) { imageList in
+        // Replace spaces with +'s
+        let combinedQuery = query.replacingOccurrences(of: " ", with: "+")
+        
+        NetworkManager.search(combinedQuery) { imageList in
             
             self.imageItems = imageList
             collection?.reloadData()
+            
             // TODO: show no items returned.
         }
     }
