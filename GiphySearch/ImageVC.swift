@@ -8,30 +8,22 @@
 
 import UIKit
 
-private let cellReuseID = "ImageCell"
+
 
 class ImageVC: UIViewController {
     
-    var imageItems = [ImageItem]()
+    static let CellReuseID = "ImageCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBox: UITextField!
     
+    let imageVM = ImageVM()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        // Register cell xib
-        let nib = UINib(nibName: "ImageCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: cellReuseID)
         setupCollectionView()
-        
-        NetworkManager.getTrending { imageList in
-            
-            print("ss: \(imageList)")
-            self.imageItems = imageList
-            self.collectionView.reloadData()
-        }
+        imageVM.refreshTrending(collectionView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +33,14 @@ class ImageVC: UIViewController {
     
     func setupCollectionView() {
         
+        // Register cell xib
+        let nib = UINib(nibName: "ImageCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: ImageVC.CellReuseID)
+        // Set delegate
+        collectionView.dataSource = imageVM
+        collectionView.delegate = imageVM
+        
+        // Setup layout.
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         
         layout.scrollDirection = .vertical
@@ -60,41 +60,4 @@ class ImageVC: UIViewController {
     }
 }
 
-extension ImageVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageItems.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseID, for: indexPath)
-        
-        if let cell = cell as? ImageCell {
-            
-            let imageItem = imageItems[indexPath.row]
-            cell.titleLabel.text = imageItem.rating
-            
-            NetworkManager.getImage(imageItem.mainLink.url) { (data, url) in
-                
-                if let anImage = UIImage(data: data) {
-                    cell.imageView.image = anImage
-                }
-            }
-            
-        }
-        return cell
-    }
-    
-    //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-    //}
-    
-    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    //}
-}
+
