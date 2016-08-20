@@ -9,20 +9,32 @@
 import UIKit
 import LBGIFImage
 
+protocol ImageItemDisplay {
+    func refresh()
+}
+
 class ImageVM:NSObject {
     
+    var imageItemDisplay:ImageItemDisplay? = nil
     var imageItems = [ImageItem]()
+    var filteredImageItems = [ImageItem]()
+    var ratingFilterString:String? = nil {
+        
+        didSet {
+            filterImageItems()
+        }
+    }
     
-    func refreshTrending(_ collection:UICollectionView?) {
+    func refreshTrending() {
         
         NetworkManager.getTrending { imageList in
             
             self.imageItems = imageList
-            collection?.reloadData()
+            self.filterImageItems()
         }
     }
     
-    func search(_ query:String, collection:UICollectionView?) {
+    func search(_ query:String) {
         
         // Replace spaces with +'s
         let combinedQuery = query.replacingOccurrences(of: " ", with: "+")
@@ -30,10 +42,23 @@ class ImageVM:NSObject {
         NetworkManager.search(combinedQuery) { imageList in
             
             self.imageItems = imageList
-            collection?.reloadData()
-            
-            // TODO: show no items returned.
+            self.filterImageItems()
         }
+    }
+    
+    func filterImageItems() {
+        
+        if ratingFilterString == nil {
+            
+            filteredImageItems = imageItems
+            
+        } else {
+            
+            filteredImageItems = imageItems.filter {
+                $0.rating == ratingFilterString
+            }
+        }
+        imageItemDisplay?.refresh()
     }
 }
 
@@ -44,7 +69,7 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageItems.count
+        return filteredImageItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,7 +78,7 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if let cell = cell as? ImageCell {
     
-            let imageItem = imageItems[indexPath.row]
+            let imageItem = filteredImageItems[indexPath.row]
             updateCell(cell, imageItem: imageItem)
         }
         return cell
@@ -62,7 +87,7 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
     func updateCell(_ cell:ImageCell, imageItem:ImageItem) {
         
         // Set cell properties.
-        cell.titleLabel.text = imageItem.rating
+        cell.titleLabel.text = imageItem.rating.uppercased()
         cell.imageLink = imageItem.mainLink.url
         cell.imageView.image = nil
         

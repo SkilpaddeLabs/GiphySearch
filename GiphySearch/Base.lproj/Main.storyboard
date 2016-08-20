@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,19 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KNK-VQ-8ex">
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NJT-8j-uTa"/>
-                                </connections>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-be-Qzt">
-                                <frame key="frameInset" minX="16" minY="629" width="106" height="30"/>
-                                <state key="normal" title="Trending"/>
-                                <connections>
-                                    <action selector="trendingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eh8-iq-bzD"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5nt-a4-4dz">
                                 <color key="backgroundColor" red="0.18165417390907923" green="1" blue="0.063375296692952054" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ddj-Oo-ssr">
@@ -46,10 +34,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iq7-3B-LO9"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KNK-VQ-8ex">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NJT-8j-uTa"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-be-Qzt">
+                                <frame key="frameInset" minX="16" minY="629" width="86" height="30"/>
+                                <state key="normal" title="Trending"/>
+                                <connections>
+                                    <action selector="trendingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eh8-iq-bzD"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v6d-PI-OlP">
+                                <frame key="frameInset" minX="117" minY="629" width="242" height="31"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="G"/>
+                                    <segment title="PG"/>
+                                    <segment title="R"/>
+                                </segments>
+                                <connections>
+                                    <action selector="ratingFilterControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="9wC-tx-ip2"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.78998897922081612" blue="0.27325096543667293" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xRH-be-Qzt" firstAttribute="top" secondItem="5nt-a4-4dz" secondAttribute="bottom" constant="8" symbolic="YES" id="3c2-M5-M6P"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xRH-be-Qzt" secondAttribute="leading" id="5CU-Nz-mfH"/>
+                            <constraint firstItem="v6d-PI-OlP" firstAttribute="top" secondItem="5nt-a4-4dz" secondAttribute="bottom" constant="8" symbolic="YES" id="6pz-8W-A39"/>
                             <constraint firstAttribute="trailing" secondItem="5nt-a4-4dz" secondAttribute="trailing" id="9No-4c-Uwu"/>
                             <constraint firstItem="KNK-VQ-8ex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AwO-Ps-LHO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xRH-be-Qzt" secondAttribute="bottom" constant="8" symbolic="YES" id="OKf-gF-yal"/>
@@ -57,18 +72,21 @@
                             <constraint firstItem="5nt-a4-4dz" firstAttribute="top" secondItem="KNK-VQ-8ex" secondAttribute="bottom" constant="-2" id="Tv8-DN-2Er"/>
                             <constraint firstItem="5nt-a4-4dz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VZz-Vr-vZh"/>
                             <constraint firstAttribute="trailing" secondItem="KNK-VQ-8ex" secondAttribute="trailing" id="aIa-Lq-vr5"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="xRH-be-Qzt" secondAttribute="leading" id="uKU-0k-qsI"/>
+                            <constraint firstItem="v6d-PI-OlP" firstAttribute="leading" secondItem="xRH-be-Qzt" secondAttribute="trailing" multiplier="2" constant="8" symbolic="YES" id="hPo-66-QZh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v6d-PI-OlP" secondAttribute="trailing" id="tOg-HE-URE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v6d-PI-OlP" secondAttribute="bottom" constant="8" symbolic="YES" id="xZH-3Z-r7d"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="5nt-a4-4dz" id="qgo-FL-EyI"/>
+                        <outlet property="ratingFilterControl" destination="v6d-PI-OlP" id="j5g-ce-sBz"/>
                         <outlet property="searchBox" destination="KNK-VQ-8ex" id="K0b-wb-p00"/>
                         <outlet property="trendingButton" destination="xRH-be-Qzt" id="dwr-fk-CFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352.80000000000001" y="135.38230884557723"/>
+            <point key="canvasLocation" x="480.80000000000001" y="-64.31784107946028"/>
         </scene>
     </scenes>
 </document>

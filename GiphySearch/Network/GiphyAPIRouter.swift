@@ -53,7 +53,6 @@ enum GiphyAPIRouter {
         case .Trending:
             return nil
         case .Search(let query):
-            // TODO: add plus for phrases
             return "?q=\(query)"
         }
     }

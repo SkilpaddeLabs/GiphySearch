@@ -21,7 +21,6 @@
 		3A84F5BB1D65436900425ACB /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5BA1D65436900425ACB /* ImageItem.swift */; };
 		3A84F5BC1D65436900425ACB /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5BA1D65436900425ACB /* ImageItem.swift */; };
 		3A84F5BE1D6549A600425ACB /* GiphyTrendingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84F5BD1D6549A600425ACB /* GiphyTrendingTest.swift */; };
-		3AA42BE71D68A6C100CB0C0E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3AA42BE61D68A6C100CB0C0E /* Podfile */; };
 		3AAE30801D667696009BB5AB /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE307E1D667696009BB5AB /* ImageCell.swift */; };
 		3AAE30811D667696009BB5AB /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAE307F1D667696009BB5AB /* ImageCell.xib */; };
 		3AAE30831D6688A2009BB5AB /* ImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE30821D6688A2009BB5AB /* ImageVM.swift */; };
@@ -55,7 +54,6 @@
 		3A84F5B71D65429200425ACB /* GiphyResponseTrending.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GiphyResponseTrending.json; path = TestJSON/GiphyResponseTrending.json; sourceTree = "<group>"; };
 		3A84F5BA1D65436900425ACB /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageItem.swift; path = Network/ImageItem.swift; sourceTree = "<group>"; };
 		3A84F5BD1D6549A600425ACB /* GiphyTrendingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyTrendingTest.swift; sourceTree = "<group>"; };
-		3AA42BE61D68A6C100CB0C0E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3AAE307E1D667696009BB5AB /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = UI/ImageCell.swift; sourceTree = "<group>"; };
 		3AAE307F1D667696009BB5AB /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCell.xib; path = UI/ImageCell.xib; sourceTree = "<group>"; };
 		3AAE30821D6688A2009BB5AB /* ImageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageVM.swift; path = UI/ImageVM.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 		3A84F57A1D6530DD00425ACB = {
 			isa = PBXGroup;
 			children = (
-				3AA42BE61D68A6C100CB0C0E /* Podfile */,
 				3A84F5A61D65311900425ACB /* README.md */,
 				3A84F5851D6530DD00425ACB /* GiphySearch */,
 				3A84F59A1D6530DD00425ACB /* GiphySearchTests */,
@@ -265,7 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AA42BE71D68A6C100CB0C0E /* Podfile in Resources */,
 				3AAE30811D667696009BB5AB /* ImageCell.xib in Resources */,
 				3A84F5911D6530DD00425ACB /* LaunchScreen.storyboard in Resources */,
 				3A84F58E1D6530DD00425ACB /* Assets.xcassets in Resources */,
@@ -406,6 +402,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -456,6 +453,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

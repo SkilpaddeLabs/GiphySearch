@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ImageVC: UIViewController {
     
     static let CellReuseID = "ImageCell"
@@ -17,14 +15,18 @@ class ImageVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBox: UISearchBar!
     @IBOutlet weak var trendingButton: UIButton!
+    @IBOutlet weak var ratingFilterControl: UISegmentedControl!
     
     let imageVM = ImageVM()
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        imageVM.imageItemDisplay = self
+        
         setupCollectionView()
-        imageVM.refreshTrending(collectionView)
+        imageVM.refreshTrending()
     }
     
     func setupCollectionView() {
@@ -56,15 +58,38 @@ class ImageVC: UIViewController {
     
     // MARK: - IBActions
     @IBAction func trendingButton(_ sender: UIButton) {
-        imageVM.refreshTrending(collectionView)
+        imageVM.refreshTrending()
+    }
+    
+    @IBAction func ratingFilterControl(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 1:
+            imageVM.ratingFilterString = "g"
+        case 2:
+            imageVM.ratingFilterString = "pg"
+        case 3:
+            imageVM.ratingFilterString = "r"
+        default:
+            imageVM.ratingFilterString = nil
+        }
+    }
+    
+}
+
+extension ImageVC: ImageItemDisplay {
+    
+    func refresh() {
+         collectionView.reloadData()
     }
 }
 
 extension ImageVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         if let queryText = searchBar.text {
-            imageVM.search(queryText, collection:collectionView)
+            imageVM.search(queryText)
         }
         searchBox.resignFirstResponder()
     }
