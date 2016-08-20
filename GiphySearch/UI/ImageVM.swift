@@ -52,34 +52,29 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageVC.CellReuseID, for: indexPath)
         
         if let cell = cell as? ImageCell {
-            
+    
             let imageItem = imageItems[indexPath.row]
-            cell.titleLabel.text = imageItem.rating
-            cell.imageLink = imageItem.mainLink.url
-            cell.imageView.image = nil
-            
-            NetworkManager.getImage(imageItem.mainLink.url) { (data, url) in
-                
-                // Make sure the network returned the url we asked for.
-                guard cell.imageLink == url.absoluteString else { return }
-
-                if let anImage = UIImage.animatedGIF(with: data) {
-                    cell.imageView.image = anImage
-                }
-                
-                //                if let anImage = UIImage(data: data) {
-                //                    cell.imageView.image = anImage
-                //                }
-            }
+            updateCell(cell, imageItem: imageItem)
         }
         return cell
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    
-    //}
-    
-    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    //}
+    func updateCell(_ cell:ImageCell, imageItem:ImageItem) {
+        
+        // Set cell properties.
+        cell.titleLabel.text = imageItem.rating
+        cell.imageLink = imageItem.mainLink.url
+        cell.imageView.image = nil
+        
+        // Get image from network.
+        NetworkManager.getImage(imageItem.mainLink.url) { (data, url) in
+            
+            // Make sure the network returned the url we asked for.
+            guard cell.imageLink == url.absoluteString else { return }
+            
+            if let anImage = UIImage.animatedGIF(with: data) {
+                cell.imageView.image = anImage
+            }
+        }
+    }
 }

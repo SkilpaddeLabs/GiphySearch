@@ -16,6 +16,7 @@ class ImageVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBox: UISearchBar!
+    @IBOutlet weak var trendingButton: UIButton!
     
     let imageVM = ImageVM()
     
@@ -51,6 +52,11 @@ class ImageVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - IBActions
+    @IBAction func trendingButton(_ sender: UIButton) {
+        imageVM.refreshTrending(collectionView)
     }
 }
 
