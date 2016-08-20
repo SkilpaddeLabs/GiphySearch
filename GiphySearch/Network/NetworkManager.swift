@@ -6,11 +6,12 @@
 //  Copyright © 2016 Skilpadde Labs. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import LBGIFImage
 
 class NetworkManager {
     
-    class func getImage(_ urlString:String, completion:@escaping (Data, URL)->()) {
+    class func getImage(_ urlString:String, completion:@escaping (UIImage, URL)->()) {
         
         guard let url = URL(string: urlString) else { return }
         
@@ -25,10 +26,14 @@ class NetworkManager {
                 print(error.localizedDescription)
             } else {
                 
+                // Turn returned data into a UIImage.
                 if let data = data,
-              let returnUrl = response?.url {
+              let returnUrl = response?.url,
+                  let image = UIImage.animatedGIF(with: data) {
+                    
+                    // Send image back on main queue.
                     DispatchQueue.main.async {
-                        completion(data, returnUrl)
+                        completion(image, returnUrl)
                     }
                 }
             }
@@ -42,26 +47,28 @@ class NetworkManager {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
+            // Make sure there is data.
             guard let jsonData = data else { return }
             
+            // Attempt to decode json.
             let json:Any?
-            
             do {
                 json = try JSONSerialization.jsonObject(with: jsonData,
-                                                        options: .allowFragments)
-                
+                                                     options: .allowFragments)
             } catch {
                 json = nil
                 print("Error deserializing json")
             }
             
+            // Convert json to an array of ImageItem.
             if let jsonDict = json as? [String:AnyObject],
-                let imageArray = jsonDict["data"] as? [[String:AnyObject]] {
+             let imageArray = jsonDict["data"] as? [[String:AnyObject]] {
+                
+                let imageList = imageArray.map {
+                    ImageItem(json: $0)
+                }
+                // Send [ImageItem] back on main queue.
                 OperationQueue.main.addOperation {
-                    
-                    let imageList = imageArray.map {
-                        ImageItem(json: $0)
-                    }
                     completion(imageList)
                 }
             }
@@ -75,30 +82,31 @@ class NetworkManager {
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
+            // Make sure there is data.
             guard let jsonData = data else { return }
             
+            // Attempt to decode json.
             let json:Any?
-            
             do {
                 json = try JSONSerialization.jsonObject(with: jsonData,
                                                      options: .allowFragments)
-
             } catch {
                 json = nil
                 print("Error deserializing json")
             }
             
+            // Convert json to an array of ImageItem.
             if let jsonDict = json as? [String:AnyObject],
-               let imageArray = jsonDict["data"] as? [[String:AnyObject]] {
+             let imageArray = jsonDict["data"] as? [[String:AnyObject]] {
+                
+                let imageList = imageArray.map {
+                    ImageItem(json: $0)
+                }
+                // Send [ImageItem] back on main queue.
                 OperationQueue.main.addOperation {
-                    
-                    let imageList = imageArray.map {
-                        ImageItem(json: $0)
-                    }
                     completion(imageList)
                 }
-            }
-            
+            }  
         }
         dataTask.resume()
     }

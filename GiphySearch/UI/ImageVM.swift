@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LBGIFImage
 
 protocol ImageItemDisplay {
     func refresh()
@@ -92,14 +91,11 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.imageView.image = nil
         
         // Get image from network.
-        NetworkManager.getImage(imageItem.mainLink.url) { (data, url) in
+        NetworkManager.getImage(imageItem.mainLink.url) { (image, url) in
             
             // Make sure the network returned the url we asked for.
             guard cell.imageLink == url.absoluteString else { return }
-            
-            if let anImage = UIImage.animatedGIF(with: data) {
-                cell.imageView.image = anImage
-            }
+            cell.imageView.image = image
         }
     }
 }
