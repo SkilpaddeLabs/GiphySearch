@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LBGIFImage
 
 class ImageVM:NSObject {
     
@@ -61,10 +62,14 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
                 
                 // Make sure the network returned the url we asked for.
                 guard cell.imageLink == url.absoluteString else { return }
-                
-                if let anImage = UIImage(data: data) {
+
+                if let anImage = UIImage.animatedGIF(with: data) {
                     cell.imageView.image = anImage
                 }
+                
+                //                if let anImage = UIImage(data: data) {
+                //                    cell.imageView.image = anImage
+                //                }
             }
         }
         return cell

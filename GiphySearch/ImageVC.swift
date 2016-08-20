@@ -56,10 +56,6 @@ class ImageVC: UIViewController {
 
 extension ImageVC: UISearchBarDelegate {
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let queryText = searchBar.text {
             imageVM.search(queryText, collection:collectionView)

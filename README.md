@@ -14,10 +14,11 @@ This README would normally document whatever steps are necessary to get your app
 Written with XCode 8b6
 Swift 3
 * Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Run 'pod install' in the project folder.
+
+Pods Used:
+LBGIFImage for animiated GIF category on UIImage.
+https://github.com/lbrndnr/LBGIFImage
 
 ### Who do I talk to? ###
 
