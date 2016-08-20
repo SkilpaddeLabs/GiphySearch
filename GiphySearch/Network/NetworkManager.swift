@@ -11,6 +11,7 @@ import LBGIFImage
 
 class NetworkManager {
     
+    // Get a single image from a URL.
     class func getImage(_ urlString:String, completion:@escaping (UIImage, URL)->()) {
         
         guard let url = URL(string: urlString) else { return }
@@ -41,6 +42,7 @@ class NetworkManager {
         dataTask.resume()
     }
     
+    // Search giphy.
     class func search(_ query:String, completion: @escaping ([ImageItem])->()) {
         
         let request = GiphyAPIRouter.Search(query).URLRequest
@@ -76,6 +78,7 @@ class NetworkManager {
         dataTask.resume()
     }
     
+    // Get currently trending GIFs.
     class func getTrending(completion: @escaping ([ImageItem])->()) {
         
         let request = GiphyAPIRouter.Trending.URLRequest
@@ -106,7 +109,7 @@ class NetworkManager {
                 OperationQueue.main.addOperation {
                     completion(imageList)
                 }
-            }  
+            }
         }
         dataTask.resume()
     }

@@ -18,7 +18,8 @@ class ImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10.0
-        imageView.layer.cornerRadius = 10.0
-        imageView.clipsToBounds = true
+        self.backgroundColor = Theme.imageCell
+        imageView.backgroundColor = UIColor.clear
+        titleLabel.textColor = Theme.background
     }
 }

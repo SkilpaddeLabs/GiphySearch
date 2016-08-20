@@ -24,6 +24,7 @@
 		3AAE30801D667696009BB5AB /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE307E1D667696009BB5AB /* ImageCell.swift */; };
 		3AAE30811D667696009BB5AB /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAE307F1D667696009BB5AB /* ImageCell.xib */; };
 		3AAE30831D6688A2009BB5AB /* ImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE30821D6688A2009BB5AB /* ImageVM.swift */; };
+		3AF665741D69148100238009 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF665731D69148100238009 /* ColorTheme.swift */; };
 		974CCD31875B8DA9004D9C84 /* Pods_GiphySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723450BE35BA7FDB4EB70B6F /* Pods_GiphySearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		3AAE307E1D667696009BB5AB /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = UI/ImageCell.swift; sourceTree = "<group>"; };
 		3AAE307F1D667696009BB5AB /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCell.xib; path = UI/ImageCell.xib; sourceTree = "<group>"; };
 		3AAE30821D6688A2009BB5AB /* ImageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageVM.swift; path = UI/ImageVM.swift; sourceTree = "<group>"; };
+		3AF665731D69148100238009 /* ColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		723450BE35BA7FDB4EB70B6F /* Pods_GiphySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		898A01A370F284678DAB56DF /* Pods-GiphySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GiphySearch/Pods-GiphySearch.release.xcconfig"; sourceTree = "<group>"; };
 		8BD100ABAAA165C1C7492806 /* Pods-GiphySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiphySearch/Pods-GiphySearch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				3AAE30821D6688A2009BB5AB /* ImageVM.swift */,
 				3A84F58A1D6530DD00425ACB /* Main.storyboard */,
 				3A84F58D1D6530DD00425ACB /* Assets.xcassets */,
+				3AF665731D69148100238009 /* ColorTheme.swift */,
 				3A84F58F1D6530DD00425ACB /* LaunchScreen.storyboard */,
 			);
 			name = UI;
@@ -337,6 +340,7 @@
 				3A84F5B21D653BBF00425ACB /* NetworkManager.swift in Sources */,
 				3AAE30801D667696009BB5AB /* ImageCell.swift in Sources */,
 				3A84F5871D6530DD00425ACB /* AppDelegate.swift in Sources */,
+				3AF665741D69148100238009 /* ColorTheme.swift in Sources */,
 				3AAE30831D6688A2009BB5AB /* ImageVM.swift in Sources */,
 				3A84F5A91D6531ED00425ACB /* GiphyAPIRouter.swift in Sources */,
 			);

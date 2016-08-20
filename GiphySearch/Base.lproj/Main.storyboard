@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5nt-a4-4dz">
-                                <color key="backgroundColor" red="0.18165417390907923" green="1" blue="0.063375296692952054" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.49411764705882355" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ddj-Oo-ssr">
                                     <size key="itemSize" width="187" height="142"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

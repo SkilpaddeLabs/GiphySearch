@@ -19,14 +19,22 @@ class ImageVC: UIViewController {
     
     let imageVM = ImageVM()
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         imageVM.imageItemDisplay = self
         
+        setupColorTheme()
         setupCollectionView()
         imageVM.refreshTrending()
+    }
+    
+    func setupColorTheme() {
+        
+        view.tintColor = Theme.imageCell
+        view.backgroundColor = Theme.background
+        collectionView.backgroundColor = Theme.collection
+        searchBox.barTintColor = Theme.background
     }
     
     func setupCollectionView() {
@@ -41,14 +49,14 @@ class ImageVC: UIViewController {
         // Setup layout.
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 50.0
+        layout.minimumLineSpacing = 20.0
         layout.minimumInteritemSpacing = 20.0
         layout.itemSize = CGSize(width: 300.0, height: 200.0)
         
-        collectionView.contentInset.top = 50.0
-        collectionView.contentInset.bottom = 50.0
-        collectionView.contentInset.left = 50.0
-        collectionView.contentInset.right = 50.0
+        collectionView.contentInset.top = 20.0
+        collectionView.contentInset.bottom = 20.0
+        collectionView.contentInset.left = 30.0
+        collectionView.contentInset.right = 30.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +82,6 @@ class ImageVC: UIViewController {
             imageVM.ratingFilterString = nil
         }
     }
-    
 }
 
 extension ImageVC: ImageItemDisplay {
