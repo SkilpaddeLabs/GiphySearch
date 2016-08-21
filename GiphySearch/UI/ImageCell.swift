@@ -11,6 +11,7 @@ import UIKit
 class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var trendedBadge: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     
@@ -28,7 +29,9 @@ class ImageCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         backgroundColor = Theme.imageCell
         imageView.backgroundColor = UIColor.clear
+        trendedBadge.tintColor = Theme.background
         titleLabel.textColor = Theme.background
+        trendedBadge.isHidden = false
     }
     
     // Resize imageView so that GIF corners get rounded.

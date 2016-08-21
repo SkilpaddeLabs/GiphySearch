@@ -26,24 +26,37 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trending" translatesAutoresizingMaskIntoConstraints="NO" id="Dua-rC-Y36">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="f99-z4-sbg"/>
+                            <constraint firstAttribute="width" constant="30" id="qMw-fZ-HYa"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.25098039215686274" green="1" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="K9P-f6-aR4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="3KE-bk-Jrl"/>
+                <constraint firstAttribute="bottom" secondItem="Dua-rC-Y36" secondAttribute="bottom" constant="4" id="9ig-Aw-KS2"/>
                 <constraint firstItem="elO-6t-qqQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Aej-FQ-Lxv"/>
                 <constraint firstAttribute="bottom" secondItem="K9P-f6-aR4" secondAttribute="bottom" constant="8" id="J5z-No-WEw"/>
+                <constraint firstItem="Dua-rC-Y36" firstAttribute="top" secondItem="elO-6t-qqQ" secondAttribute="bottom" constant="3" id="PJf-Hg-nGh"/>
+                <constraint firstAttribute="trailing" secondItem="Dua-rC-Y36" secondAttribute="trailing" constant="10" id="Slx-pR-d8m"/>
                 <constraint firstItem="K9P-f6-aR4" firstAttribute="top" secondItem="elO-6t-qqQ" secondAttribute="bottom" constant="8" id="eaO-g2-SdK"/>
-                <constraint firstAttribute="trailing" secondItem="K9P-f6-aR4" secondAttribute="trailing" constant="8" id="jjP-eR-ZkM"/>
                 <constraint firstItem="elO-6t-qqQ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="scc-BT-jBe"/>
+                <constraint firstItem="Dua-rC-Y36" firstAttribute="leading" secondItem="K9P-f6-aR4" secondAttribute="trailing" constant="8" symbolic="YES" id="sjM-Gv-xgw"/>
             </constraints>
             <size key="customSize" width="210" height="201"/>
             <connections>
                 <outlet property="imageView" destination="elO-6t-qqQ" id="P9t-We-LDm"/>
                 <outlet property="imageWidthConstraint" destination="Lvr-ZB-llp" id="lyD-I7-VOH"/>
                 <outlet property="titleLabel" destination="K9P-f6-aR4" id="UXT-6Z-zI8"/>
+                <outlet property="trendedBadge" destination="Dua-rC-Y36" id="D1X-nG-bbk"/>
             </connections>
-            <point key="canvasLocation" x="-69" y="-21"/>
+            <point key="canvasLocation" x="-69" y="-21.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="Trending" width="834" height="834"/>
+    </resources>
 </document>

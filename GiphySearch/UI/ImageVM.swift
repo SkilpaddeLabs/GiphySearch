@@ -91,6 +91,7 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.imageSize = CGSize(width: imageItem.mainLink.width,
                                height: imageItem.mainLink.height)
         cell.imageView.image = nil
+        cell.trendedBadge.isHidden = !imageItem.hasTrended
         
         // Get image from network.
         NetworkManager.getImage(imageItem.mainLink.url) { (image, url) in

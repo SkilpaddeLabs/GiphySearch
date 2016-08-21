@@ -25,14 +25,15 @@ struct ImageItem {
     
     let type:String
     let rating:String
-    let trendingDate:String
+    let hasTrended:Bool 
     let mainLink:ImageLink
     
     init(json:[String:AnyObject]) {
         
         type = json["type"] as? String ?? ""
         rating = json["rating"] as? String ?? ""
-        trendingDate = json["trending_datetime"] as? String ?? ""
+        let trendingDate = json["trending_datetime"] as? String ?? ""
+        hasTrended = trendingDate == "1970-01-01 00:00:00" ? false : true
         
         let images = json["images"] as? [String:AnyObject] ?? [String:AnyObject]()
         let link = images["fixed_height"] as? [String:AnyObject] ?? [String:AnyObject]()

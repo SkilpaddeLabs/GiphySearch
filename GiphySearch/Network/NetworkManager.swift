@@ -30,7 +30,7 @@ class NetworkManager {
                 // Turn returned data into a UIImage.
                 if let data = data,
               let returnUrl = response?.url,
-                  let image = UIImage.animatedGIF(with: data) {
+                    let image = UIImage.animatedGIF(with: data) {
                     
                     // Send image back on main queue.
                     DispatchQueue.main.async {
