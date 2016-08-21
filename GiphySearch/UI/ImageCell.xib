@@ -18,6 +18,9 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elO-6t-qqQ">
                         <frame key="frameInset" minX="8" minY="8" width="194" height="149"/>
                         <color key="backgroundColor" red="1" green="0.09611011174646622" blue="0.18962091457648866" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="194" id="Lvr-ZB-llp"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9P-f6-aR4">
                         <frame key="frameInset" minX="8" minY="165" width="194" height="28"/>
@@ -34,12 +37,12 @@
                 <constraint firstAttribute="bottom" secondItem="K9P-f6-aR4" secondAttribute="bottom" constant="8" id="J5z-No-WEw"/>
                 <constraint firstItem="K9P-f6-aR4" firstAttribute="top" secondItem="elO-6t-qqQ" secondAttribute="bottom" constant="8" id="eaO-g2-SdK"/>
                 <constraint firstAttribute="trailing" secondItem="K9P-f6-aR4" secondAttribute="trailing" constant="8" id="jjP-eR-ZkM"/>
-                <constraint firstAttribute="trailing" secondItem="elO-6t-qqQ" secondAttribute="trailing" constant="8" id="oQA-Se-XOw"/>
-                <constraint firstItem="elO-6t-qqQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="zYj-Yu-fH5"/>
+                <constraint firstItem="elO-6t-qqQ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="scc-BT-jBe"/>
             </constraints>
             <size key="customSize" width="210" height="201"/>
             <connections>
                 <outlet property="imageView" destination="elO-6t-qqQ" id="P9t-We-LDm"/>
+                <outlet property="imageWidthConstraint" destination="Lvr-ZB-llp" id="lyD-I7-VOH"/>
                 <outlet property="titleLabel" destination="K9P-f6-aR4" id="UXT-6Z-zI8"/>
             </connections>
             <point key="canvasLocation" x="-69" y="-21"/>

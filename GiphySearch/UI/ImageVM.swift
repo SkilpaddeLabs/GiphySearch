@@ -88,6 +88,8 @@ extension ImageVM: UICollectionViewDelegate, UICollectionViewDataSource {
         // Set cell properties.
         cell.titleLabel.text = imageItem.rating.uppercased()
         cell.imageLink = imageItem.mainLink.url
+        cell.imageSize = CGSize(width: imageItem.mainLink.width,
+                               height: imageItem.mainLink.height)
         cell.imageView.image = nil
         
         // Get image from network.
