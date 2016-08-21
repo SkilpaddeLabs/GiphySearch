@@ -19,4 +19,3 @@ https://github.com/lbrndnr/LBGIFImage
 ### Who do I talk to? ###
 
 Written by Tim Bolstad. 
-tim@skilpaddelabs.com
