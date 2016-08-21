@@ -40,15 +40,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NJT-8j-uTa"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-be-Qzt">
-                                <frame key="frameInset" minX="16" minY="629" width="86" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-be-Qzt">
                                 <state key="normal" title="Trending"/>
                                 <connections>
                                     <action selector="trendingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eh8-iq-bzD"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v6d-PI-OlP">
-                                <frame key="frameInset" minX="117" minY="629" width="242" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v6d-PI-OlP">
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="G"/>
@@ -72,7 +70,7 @@
                             <constraint firstItem="5nt-a4-4dz" firstAttribute="top" secondItem="KNK-VQ-8ex" secondAttribute="bottom" constant="-2" id="Tv8-DN-2Er"/>
                             <constraint firstItem="5nt-a4-4dz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VZz-Vr-vZh"/>
                             <constraint firstAttribute="trailing" secondItem="KNK-VQ-8ex" secondAttribute="trailing" id="aIa-Lq-vr5"/>
-                            <constraint firstItem="v6d-PI-OlP" firstAttribute="leading" secondItem="xRH-be-Qzt" secondAttribute="trailing" multiplier="2" constant="8" symbolic="YES" id="hPo-66-QZh"/>
+                            <constraint firstItem="v6d-PI-OlP" firstAttribute="leading" secondItem="xRH-be-Qzt" secondAttribute="trailing" multiplier="1.5" constant="8" symbolic="YES" id="hPo-66-QZh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v6d-PI-OlP" secondAttribute="trailing" id="tOg-HE-URE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v6d-PI-OlP" secondAttribute="bottom" constant="8" symbolic="YES" id="xZH-3Z-r7d"/>
                         </constraints>
