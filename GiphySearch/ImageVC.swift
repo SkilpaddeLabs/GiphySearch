@@ -93,6 +93,15 @@ extension ImageVC: ImageItemDisplay {
 
 extension ImageVC: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        // Per character search.
+        //        if let queryText = searchBar.text {
+        //    imageVM.search(queryText)
+        //}
+    }
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         if let queryText = searchBar.text {
